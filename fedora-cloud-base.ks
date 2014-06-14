@@ -168,6 +168,11 @@ cat > /etc/hosts << EOF
 EOF
 echo .
 
+# Configure NTP as GCE requires
+sed -ri '/^server [1-3]\.fedora.*$/d' /etc/ntp.conf
+sed -ri 's@^server 0\.fedora.*$@server metadata.google.internal iburst@' /etc/ntp.conf
+
+
 
 # Because memory is scarce resource in most cloud/virt environments,
 # and because this impedes forensics, we are differing from the Fedora
