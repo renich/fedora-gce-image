@@ -192,7 +192,7 @@ rm -f /boot/System.map*
 
 ## configuration
 ### strongly recommended
-cat < < 'EOF' > /etc/sysctl.d/11-google-strongly_recommended.conf
+cat << 'EOF' > /etc/sysctl.d/11-google-strongly_recommended.conf
 # enables syn flood protection
 net.ipv4.tcp_syncookies = 1
 
@@ -251,7 +251,7 @@ net.ipv4.tcp_rfc1337 = 1
 kernel.randomize_va_space = 2
 EOF
 
-cat < < 'EOF' > /etc/sysctl.d/12-google-recommended.conf
+cat << 'EOF' > /etc/sysctl.d/12-google-recommended.conf
 # provides protection from ToCToU races
 fs.protected_hardlinks=1
 
