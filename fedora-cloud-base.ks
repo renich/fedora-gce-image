@@ -65,6 +65,9 @@ firewalld
 tar
 rsync
 
+# enable automatic updates
+yum-cron-daily
+
 # Some things from @core we can do without in a minimal install
 -biosdevname
 -plymouth
@@ -133,6 +136,10 @@ yum -C -y remove firewalld --setopt="clean_requirements_on_remove=1"
 # in some unneeded deps (like, newt and slang)
 echo "Removing authconfig."
 yum -C -y remove authconfig --setopt="clean_requirements_on_remove=1"
+
+# Enable automatic updates
+sed -ri 's@apply_updates = no@apply_updates = yes@' /etc/yum/yum-cron.conf
+
 
 echo -n "Getty fixes"
 # although we want console output going to the serial console, we don't
