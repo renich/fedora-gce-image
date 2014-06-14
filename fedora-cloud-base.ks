@@ -68,6 +68,9 @@ rsync
 # enable automatic updates
 yum-cron-daily
 
+# add irqbalance
+irqbalance
+
 # Some things from @core we can do without in a minimal install
 -biosdevname
 -plymouth
