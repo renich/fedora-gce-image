@@ -71,6 +71,9 @@ yum-cron-daily
 # add irqbalance
 irqbalance
 
+# add ntp
+ntp
+
 # Some things from @core we can do without in a minimal install
 -biosdevname
 -plymouth
