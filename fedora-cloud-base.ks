@@ -159,6 +159,7 @@ DEVICE="eth0"
 BOOTPROTO="dhcp"
 ONBOOT="yes"
 TYPE="Ethernet"
+MTU="1460"
 EOF
 
 # generic localhost names
